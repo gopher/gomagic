@@ -1,4 +1,4 @@
-// package magic is a go wrapper around the libmagic
+// package gomagic is a go wrapper around the libmagic
 // magic number recognition library
 
 package gomagic
@@ -33,7 +33,7 @@ const MimeTypeFlag = C.MAGIC_MIME_TYPE
 // ContinueFlag returns all matches
 const ContinueFlag = C.MAGIC_CONTINUE
 
-// CheckFlag prinst warnings to stderr
+// CheckFlag prints warnings to stderr
 const CheckFlag = C.MAGIC_CHECK
 
 // PreserveAtimeFlag restores access time on exit
