@@ -1,6 +1,5 @@
-// package gomagic is a go wrapper around the libmagic
+// Package gomagic is a go wrapper around the libmagic
 // magic number recognition library
-
 package gomagic
 
 // #cgo LDFLAGS: -lmagic
