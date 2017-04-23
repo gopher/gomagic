@@ -118,17 +118,15 @@ const ParamRegexMax = C.MAGIC_PARAM_REGEX_MAX
 // many bytes will be processed
 const ParamBytesMax = C.MAGIC_PARAM_BYTES_MAX
 
-// Magic provides the access hook for calling libmagic
+// magic stores the state of the libmagic instance
 type magic struct {
-	flags  int
 	cookie C.magic_t
 }
 
 // New creates a new Magic struct
 func New(flags int) (magic, error) {
 	magic := magic{}
-	magic.flags = C.MAGIC_NONE | flags
-	magic.cookie = C.magic_open(C.int(magic.flags))
+	magic.cookie = C.magic_open(C.int(flags))
 	if magic.cookie == nil {
 		return magic, fmt.Errorf("Failed to initialize magic library")
 	}
